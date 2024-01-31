@@ -30,6 +30,7 @@ If you found a bug or would like to submit an inprovement to this project, feel 
 
 ## Structure
 
+```bash
 Reddit-Like-BACK/
 |-- controllers/
 | |-- userController.js
@@ -55,3 +56,4 @@ Reddit-Like-BACK/
 |-- index.js
 |-- db.rest
 |-- seed.js
+```
