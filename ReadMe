@@ -21,3 +21,4 @@ Reddit-Like-BACK/
 | |-- subredditRoutes.js
 |
 |-- index.js
+|-- db.rest

@@ -13,6 +13,7 @@ const registerUser = async (req, res) => {
     res.sendStatus(201);
   } catch (error) {
     res.sendStatus(500);
+    res.send(error);
   }
 };
 
