@@ -1,3 +1,7 @@
+# Reddit-like back
+
+## Structure
+
 Reddit-Like-BACK/
 |-- controllers/
 | |-- userController.js
