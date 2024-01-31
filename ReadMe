@@ -22,3 +22,4 @@ Reddit-Like-BACK/
 |
 |-- index.js
 |-- db.rest
+|-- seed.js
