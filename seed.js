@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 const faker = require("faker");
 const bcrypt = require("bcrypt");
 
+const userSchema = require("./src/models/user");
+const subredditSchema = require("./src/models/subreddit");
+const postSchema = require("./src/models/post");
+const commentSchema = require("./src/models/comment");
+
 mongoose.connect("mongodb://localhost:27017/reddit_clone", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
