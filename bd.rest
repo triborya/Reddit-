@@ -1,0 +1,29 @@
+Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRyaUJvcnJ5YSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA2Njk0ODgyfQ.dTGMamamrP0TNr3hbylXEQ9QIOPiaSVjmKJXhK6EbI4
+
+###
+GET http://localhost:6969
+###
+POST http://localhost:6969/register
+Content-Type: application/json
+
+{
+    "username": "TriBorrya",
+    "password": "triborrya"
+}
+###
+POST http://localhost:6969/login
+Content-Type: application/json
+
+{
+    "username": "TriBorrya",
+    "password": "triborrya"
+}
+###
+POST http://localhost:6969/create-subreddit
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1YmExMWIxNjJkNTg0MmIwODA5ZDQ5OSIsInVzZXJuYW1lIjoiVHJpQm9ycnlhIiwicGFzc3dvcmQiOiIkMmIkMTAkLjE2YTZMZzludVlqT2FFZnMyWnNwT2dIVk5xc20yZ1Q0SUx1OUhSTTF3c2QxOGt1MjdQSEciLCJyb2xlIjoidXNlciIsIl9fdiI6MH0sImlhdCI6MTcwNjY5NTQzMSwiZXhwIjoxNzA3MzAwMjMxfQ.4CrX9IpwRQceMebPvVEeGW2BQlDmrdSunzOyEcU-9Kk
+
+{
+  "name": "test_subreddit",
+  "description": "This is a test subreddit."
+}

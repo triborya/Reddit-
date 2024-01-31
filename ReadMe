@@ -1,0 +1,23 @@
+Reddit-Like-BACK/
+|-- controllers/
+| |-- userController.js
+| |-- postController.js
+| |-- commentController.js
+| |-- subredditController.js
+|
+|-- middlewares/
+| |-- authenticateToken.js
+|
+|-- models/
+| |-- userSchema.js
+| |-- postSchema.js
+| |-- commentSchema.js
+| |-- subredditSchema.js
+|
+|-- routes/
+| |-- userRoutes.js
+| |-- postRoutes.js
+| |-- commentRoutes.js
+| |-- subredditRoutes.js
+|
+|-- index.js
