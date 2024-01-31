@@ -1,0 +1,74 @@
+const mongoose = require("mongoose");
+const faker = require("faker");
+const bcrypt = require("bcrypt");
+
+mongoose.connect("mongodb://localhost:27017/reddit_clone", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const User = mongoose.model("User", userSchema);
+const Subreddit = mongoose.model("Subreddit", subredditSchema);
+const Post = mongoose.model("Post", postSchema);
+const Comment = mongoose.model("Comment", commentSchema);
+
+const seedDatabase = async () => {
+  try {
+    // Add fake users
+    const users = [];
+    for (let i = 0; i < 5; i++) {
+      const hashedPassword = await bcrypt.hash("password123", 10);
+      const user = new User({
+        username: faker.internet.userName(),
+        password: hashedPassword,
+      });
+      await user.save();
+      users.push(user);
+    }
+
+    // Add fake subreddits
+    const subreddits = [];
+    for (let i = 0; i < 3; i++) {
+      const subreddit = new Subreddit({
+        name: faker.lorem.word(),
+        description: faker.lorem.sentence(),
+        moderators: [users[i % users.length]._id],
+      });
+      await subreddit.save();
+      subreddits.push(subreddit);
+    }
+
+    // Add fake posts and comments
+    for (let i = 0; i < subreddits.length; i++) {
+      const subreddit = subreddits[i];
+      for (let j = 0; j < 5; j++) {
+        const post = new Post({
+          title: faker.lorem.sentence(),
+          content: faker.lorem.paragraph(),
+          author: users[j % users.length]._id,
+        });
+        await post.save();
+        subreddit.posts.push(post);
+
+        for (let k = 0; k < 3; k++) {
+          const comment = new Comment({
+            content: faker.lorem.sentence(),
+            author: users[k % users.length]._id,
+            post: post._id,
+          });
+          await comment.save();
+          post.comments.push(comment);
+        }
+      }
+      await subreddit.save();
+    }
+
+    console.log("Database seeded successfully!");
+  } catch (error) {
+    console.error("Error seeding database:", error);
+  } finally {
+    mongoose.disconnect();
+  }
+};
+
+seedDatabase();
