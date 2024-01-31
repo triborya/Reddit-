@@ -1,15 +1,19 @@
 const express = require("express");
+const dotenv = require("dotenv");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
+dotenv.config();
+
 const app = express();
-const PORT = 6969;
+
+const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/reddit_clone");
+mongoose.connect(process.env.MONGO_URI);
 
 const authenticateToken = require("./middlewares/authenticateToken");
 

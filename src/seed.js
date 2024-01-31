@@ -2,15 +2,14 @@ const mongoose = require("mongoose");
 const faker = require("faker");
 const bcrypt = require("bcrypt");
 
-const userSchema = require("./src/models/user");
-const subredditSchema = require("./src/models/subreddit");
-const postSchema = require("./src/models/post");
-const commentSchema = require("./src/models/comment");
+const userSchema = require("./models/user");
+const subredditSchema = require("./models/subreddit");
+const postSchema = require("./models/post");
+const commentSchema = require("./models/comment");
 
-mongoose.connect("mongodb://localhost:27017/reddit_clone", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb://localhost:27017/reddit_clone" || process.env.MONGODB_URI
+);
 
 const User = mongoose.model("User", userSchema);
 const Subreddit = mongoose.model("Subreddit", subredditSchema);
