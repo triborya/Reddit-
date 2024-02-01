@@ -31,29 +31,26 @@ If you found a bug or would like to submit an inprovement to this project, feel 
 ## Structure
 
 ```bash
-Reddit-Like-BACK/
-|-- controllers/
-| |-- userController.js
-| |-- postController.js
-| |-- commentController.js
-| |-- subredditController.js
-|
-|-- middlewares/
-| |-- authenticateToken.js
-|
-|-- models/
-| |-- userSchema.js
-| |-- postSchema.js
-| |-- commentSchema.js
-| |-- subredditSchema.js
-|
-|-- routes/
-| |-- userRoutes.js
-| |-- postRoutes.js
-| |-- commentRoutes.js
-| |-- subredditRoutes.js
-|
-|-- index.js
-|-- db.rest
-|-- seed.js
+src/
+┣ controllers/
+┃ ┣ commentController.js
+┃ ┣ postController.js
+┃ ┣ subredditController.js
+┃ ┗ userController.js
+┣ middlewares/
+┃ ┗ authenticateToken.js
+┣ models/
+┃ ┣ comment.js
+┃ ┣ post.js
+┃ ┣ subreddit.js
+┃ ┗ user.js
+┣ routes/
+┃ ┣ commentRoutes.js
+┃ ┣ postRoutes.js
+┃ ┣ subredditRoutes.js
+┃ ┗ userRoutes.js
+┣ app.js
+┣ db.rest
+┣ index.js
+┗ seed.js
 ```

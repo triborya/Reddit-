@@ -1,20 +1,15 @@
 const mongoose = require("mongoose");
-const faker = require("faker");
+const { faker } = require("@faker-js/faker");
 const bcrypt = require("bcrypt");
 
-const userSchema = require("./models/user");
-const subredditSchema = require("./models/subreddit");
-const postSchema = require("./models/post");
-const commentSchema = require("./models/comment");
+const User = require("./src/models/user");
+const Subreddit = require("./src/models/subreddit");
+const Post = require("./src/models/post");
+const Comment = require("./src/models/comment");
 
 mongoose.connect(
   "mongodb://localhost:27017/reddit_clone" || process.env.MONGODB_URI
 );
-
-const User = mongoose.model("User", userSchema);
-const Subreddit = mongoose.model("Subreddit", subredditSchema);
-const Post = mongoose.model("Post", postSchema);
-const Comment = mongoose.model("Comment", commentSchema);
 
 const seedDatabase = async () => {
   try {

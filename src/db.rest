@@ -28,3 +28,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6I
   "description": "This is a test subreddit."
 }
 ###
+POST POST http://localhost:6969/create-subreddit
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1YmExMWIxNjJkNTg0MmIwODA5ZDQ5OSIsInVzZXJuYW1lIjoiVHJpQm9ycnlhIiwicGFzc3dvcmQiOiIkMmIkMTAkLjE2YTZMZzludVlqT2FFZnMyWnNwT2dIVk5xc20yZ1Q0SUx1OUhSTTF3c2QxOGt1MjdQSEciLCJyb2xlIjoidXNlciIsIl9fdiI6MH0sImlhdCI6MTcwNjY5NTQzMSwiZXhwIjoxNzA3MzAwMjMxfQ.4CrX9IpwRQceMebPvVEeGW2BQlDmrdSunzOyEcU-9Kk
+
+{
+  
+}
