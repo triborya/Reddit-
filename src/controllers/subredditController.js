@@ -38,8 +38,6 @@ const deleteSubreddit = async (req, res) => {
   }
 };
 
-// Other subreddit-related controller functions
-
 module.exports = {
   createSubreddit,
   deleteSubreddit,

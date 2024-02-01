@@ -1,37 +1,82 @@
-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRyaUJvcnJ5YSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA2Njk0ODgyfQ.dTGMamamrP0TNr3hbylXEQ9QIOPiaSVjmKJXhK6EbI4
-
-###
-GET http://localhost:6969
-###
+# User Registration
 POST http://localhost:6969/register
 Content-Type: application/json
 
 {
-    "username": "TriBorrya",
-    "password": "triborrya"
+  "username": "testuser",
+  "password": "testpassword"
 }
+
 ###
+
+# User Login
 POST http://localhost:6969/login
 Content-Type: application/json
 
 {
-    "username": "TriBorrya",
-    "password": "triborrya"
+  "username": "testuser",
+  "password": "testpassword"
 }
+
 ###
+
+# Create Subreddit (Authenticated)
 POST http://localhost:6969/create-subreddit
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1YmExMWIxNjJkNTg0MmIwODA5ZDQ5OSIsInVzZXJuYW1lIjoiVHJpQm9ycnlhIiwicGFzc3dvcmQiOiIkMmIkMTAkLjE2YTZMZzludVlqT2FFZnMyWnNwT2dIVk5xc20yZ1Q0SUx1OUhSTTF3c2QxOGt1MjdQSEciLCJyb2xlIjoidXNlciIsIl9fdiI6MH0sImlhdCI6MTcwNjY5NTQzMSwiZXhwIjoxNzA3MzAwMjMxfQ.4CrX9IpwRQceMebPvVEeGW2BQlDmrdSunzOyEcU-9Kk
+Authorization: Bearer <YourAccessToken>
 
 {
-  "name": "test_subreddit",
-  "description": "This is a test subreddit."
+  "name": "programming",
+  "description": "Discussion about programming"
 }
+
 ###
-POST POST http://localhost:6969/create-subreddit
+
+# Create Post (Authenticated)
+POST http://localhost:6969/create-post
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1YmExMWIxNjJkNTg0MmIwODA5ZDQ5OSIsInVzZXJuYW1lIjoiVHJpQm9ycnlhIiwicGFzc3dvcmQiOiIkMmIkMTAkLjE2YTZMZzludVlqT2FFZnMyWnNwT2dIVk5xc20yZ1Q0SUx1OUhSTTF3c2QxOGt1MjdQSEciLCJyb2xlIjoidXNlciIsIl9fdiI6MH0sImlhdCI6MTcwNjY5NTQzMSwiZXhwIjoxNzA3MzAwMjMxfQ.4CrX9IpwRQceMebPvVEeGW2BQlDmrdSunzOyEcU-9Kk
+Authorization: Bearer <YourAccessToken>
 
 {
-  
+  "title": "Introduction to Node.js",
+  "content": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine."
 }
+
+###
+
+# Get All Posts
+GET http://localhost:6969/get-all-posts
+
+###
+
+# Get Post by ID
+GET http://localhost:6969/get-post/:postId
+
+###
+
+# Create Comment (Authenticated)
+POST http://localhost:6969/create-comment/:postId
+Content-Type: application/json
+Authorization: Bearer <YourAccessToken>
+
+{
+  "content": "Great post! I learned a lot."
+}
+
+###
+
+# Create Subreddit (Authenticated)
+POST http://localhost:6969/create-subreddit
+Content-Type: application/json
+Authorization: Bearer <YourAccessToken>
+
+{
+  "name": "movies",
+  "description": "Discussion about movies"
+}
+
+###
+
+# Delete Subreddit (Authenticated)
+DELETE http://localhost:6969/delete-subreddit/:subredditId
+Authorization: Bearer <YourAccessToken>

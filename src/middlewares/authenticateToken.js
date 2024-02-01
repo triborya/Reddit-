@@ -2,20 +2,21 @@ const jwt = require("jsonwebtoken");
 
 const authenticateToken = (req, res, next) => {
   const tokenHeader = req.headers.authorization;
-  const token = tokenHeader.split(" ")[1];
-
-  if (!token) {
+  if (!tokenHeader) {
     return res
       .status(401)
       .json({ message: "Accès non autorisé. Token manquant." });
   }
+
+  const token = tokenHeader.split(" ")[1];
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded.user;
     next();
   } catch (error) {
-    res.status(401).json({ message: "Token invalide." });
+    console.error("JWT Verification Error:", error);
+    res.status(401).json({ message: "Token invalide.", error: error.message });
   }
 };
 

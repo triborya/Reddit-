@@ -22,9 +22,6 @@ const createComment = async (req, res) => {
   }
 };
 
-// Other comment-related controller functions
-
 module.exports = {
   createComment,
-  // Other exported functions
 };
