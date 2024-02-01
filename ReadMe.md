@@ -12,6 +12,19 @@
 - faker
 - cors
 
+## Tested reqs:
+
+- User Registration
+- User Login
+- Get All Posts
+- Get Post by ID
+- Create Subreddit (Authenticated)
+- Create Post (Authenticated)
+- Delete Post (Authenticated)
+- Create Comment (Authenticated)
+- Create Subreddit (Authenticated)
+- Delete Subreddit (Authenticated)
+
 ## How to use:
 
 1. Clone this project.
