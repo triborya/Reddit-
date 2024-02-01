@@ -93,8 +93,6 @@ const editPost = async (req, res) => {
   }
 };
 
-// Other post-related controller functions
-
 module.exports = {
   getAllPosts,
   getPostById,

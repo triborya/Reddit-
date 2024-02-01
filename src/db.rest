@@ -44,6 +44,14 @@ Authorization: Bearer <YourAccessToken>
 
 ###
 
+# Delete Post
+DELETE http://localhost:6969/delete-post/:postId
+Authorization: Bearer <your_token>
+
+# Replace ":postId" with the actual ID of the post you want to delete
+
+###
+
 # Get All Posts
 GET http://localhost:6969/get-all-posts
 
