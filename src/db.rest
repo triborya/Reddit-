@@ -1,5 +1,5 @@
 # User Registration
-POST http://localhost:6969/register
+POST http://localhost:6969/user/register
 Content-Type: application/json
 
 {
@@ -10,7 +10,7 @@ Content-Type: application/json
 ###
 
 # User Login
-POST http://localhost:6969/login
+POST http://localhost:6969/user/login
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
 ###
 
 # Create Subreddit (Authenticated)
-POST http://localhost:6969/create-subreddit
+POST http://localhost:6969/subreddit/create-subreddit
 Content-Type: application/json
 Authorization: Bearer <YourAccessToken>
 
@@ -33,10 +33,9 @@ Authorization: Bearer <YourAccessToken>
 ###
 
 # Create Post (Authenticated)
-POST http://localhost:6969/create-post
+POST http://localhost:6969/post/create-post
 Content-Type: application/json
 Authorization: Bearer <YourAccessToken>
-
 {
   "title": "Introduction to Node.js",
   "content": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine."
@@ -45,27 +44,26 @@ Authorization: Bearer <YourAccessToken>
 ###
 
 # Delete Post
-DELETE http://localhost:6969/delete-post/:postId
-Authorization: Bearer <your_token>
-
-# Replace ":postId" with the actual ID of the post you want to delete
+DELETE http://localhost:6969/post/delete-post/:postId
+Authorization: Bearer <YourAccessToken>
 
 ###
 
 # Get All Posts
-GET http://localhost:6969/get-all-posts
-
-###
+GET http://localhost:6969/post/get-all-posts
+Authorization: Bearer <YourAccessToken>
 
 # Get Post by ID
-GET http://localhost:6969/get-post/:postId
+GET http://localhost:6969/post/get-post/:postId
+Authorization: Bearer <YourAccessToken>
 
 ###
 
 # Create Comment (Authenticated)
-POST http://localhost:6969/create-comment/:postId
+POST http://localhost:6969/comm/create-comment/:postId
 Content-Type: application/json
 Authorization: Bearer <YourAccessToken>
+
 
 {
   "content": "Great post! I learned a lot."

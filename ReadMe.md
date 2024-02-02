@@ -62,7 +62,6 @@ src/
 ┃ ┣ postRoutes.js
 ┃ ┣ subredditRoutes.js
 ┃ ┗ userRoutes.js
-┣ app.js
 ┣ db.rest
 ┣ index.js
 ┗ seed.js

@@ -1,4 +1,5 @@
 const Post = require("../models/post");
+const Comment = require("../models/comment");
 
 const getAllPosts = async (req, res) => {
   try {
@@ -49,9 +50,9 @@ const deletePost = async (req, res) => {
     }
 
     await Comment.deleteMany({ post: postId });
-    await post.remove();
+    await Post.deleteOne({ _id: postId });
 
-    res.sendStatus(200);
+    res.status(200).send("Deleted");
   } catch (error) {
     console.error("Error deleting post:", error);
     res.status(500).send(error.message);
